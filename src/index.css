@@ -6,32 +6,32 @@
 
 @layer base {
   :root {
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 196 83% 47%;
 
-    --card: 222 47% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 196 83% 47%;
 
-    --popover: 222 47% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 196 83% 47%;
 
     --primary: 196 83% 47%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 85% 45%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 196 83% 47%;
 
-    --muted: 217 33% 17%;
+    --muted: 210 40% 96.1%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 196 85% 45%; 
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 196 83% 47%;
 
     --radius: 0.5rem;
@@ -46,7 +46,7 @@
 
   html {
     scroll-behavior: smooth;
-    @apply bg-wz-black text-wz-white;
+    @apply bg-white text-wz-blue;
   }
 
   body {
@@ -102,7 +102,7 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-blue-gradient;
+    @apply bg-clip-text text-transparent bg-blue-white-gradient;
   }
   
   .animate-delay-100 {
@@ -177,7 +177,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -231,22 +231,10 @@
   right: -2px;
   bottom: -2px;
   z-index: -1;
-  background: linear-gradient(45deg, #0EA5E9, #6E59A5, #0EA5E9);
+  background: linear-gradient(45deg, #0EA5E9, #33C3F0, #0EA5E9);
   background-size: 400%;
   border-radius: inherit;
   animation: glowing 10s linear infinite;
-}
-
-@keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
 }
 
 /* 3D card effect */

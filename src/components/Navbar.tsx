@@ -28,10 +28,10 @@ const Navbar = () => {
   ];
   
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-wz-black/80 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-6'}`}>
       <div className="wrapper flex-between">
         <a href="#home" className="relative z-10">
-          <h1 className="text-2xl font-bold text-gradient">
+          <h1 className="text-2xl font-bold">
             Wz <span className="text-wz-blue">WebDezign</span>
           </h1>
         </a>
@@ -42,7 +42,7 @@ const Navbar = () => {
             <a
               key={index}
               href={link.href}
-              className="text-wz-white hover:text-wz-blue-light transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wz-blue-light after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              className="text-wz-blue hover:text-wz-blue-light transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wz-blue-light after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               {link.title}
             </a>
@@ -50,7 +50,7 @@ const Navbar = () => {
           
           <a
             href="#contact"
-            className="ml-4 btn-glow bg-wz-blue text-wz-white py-2 px-5 rounded-full font-medium hover:brightness-110 transition-all duration-300"
+            className="ml-4 btn-glow bg-wz-blue text-white py-2 px-5 rounded-full font-medium hover:brightness-110 transition-all duration-300"
           >
             Orçamento
           </a>
@@ -58,7 +58,7 @@ const Navbar = () => {
         
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-wz-white z-20"
+          className="md:hidden text-wz-blue z-20"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -66,7 +66,7 @@ const Navbar = () => {
         
         {/* Mobile Navigation */}
         <div
-          className={`fixed inset-0 bg-wz-dark/95 backdrop-blur-lg flex-center flex-col z-10 transition-all duration-500 ${
+          className={`fixed inset-0 bg-white/95 backdrop-blur-lg flex-center flex-col z-10 transition-all duration-500 ${
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
@@ -75,7 +75,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-wz-white text-lg hover:text-wz-blue-light transition-colors"
+                className="text-wz-blue text-lg hover:text-wz-blue-light transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
@@ -84,7 +84,7 @@ const Navbar = () => {
             
             <a
               href="#contact"
-              className="mt-4 btn-glow bg-wz-blue text-wz-white py-2 px-8 rounded-full font-medium hover:brightness-110 transition-all duration-300"
+              className="mt-4 btn-glow bg-wz-blue text-white py-2 px-8 rounded-full font-medium hover:brightness-110 transition-all duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Orçamento

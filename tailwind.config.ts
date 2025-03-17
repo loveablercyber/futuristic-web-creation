@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -69,8 +68,8 @@ export default {
 				"wz-blue-dark": "#0FA0CE",
 				"wz-white": "#FFFFFF",
 				"wz-gray-light": "#F5F5F5",
+				"wz-dark": "#333333",
 				"wz-black": "#121212",
-				"wz-dark": "#1A1F2C",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

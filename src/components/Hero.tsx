@@ -56,7 +56,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex-center overflow-hidden pt-24 pb-16"
+      className="relative min-h-screen flex-center overflow-hidden pt-24 pb-16 bg-white"
       ref={heroRef}
     >
       <div className="wrapper">
@@ -64,16 +64,16 @@ const Hero = () => {
           <div className="flex-1 text-center lg:text-left z-10">
             <div className="space-y-6">
               <div className="inline-block px-4 py-1 rounded-full bg-wz-blue/10 border border-wz-blue/20 animate-on-load opacity-0 translate-y-10 transition-all duration-700">
-                <p className="text-sm text-wz-blue-light font-medium">
+                <p className="text-sm text-wz-blue font-medium">
                   Criação de Sites • Hospedagem • Marketing Digital
                 </p>
               </div>
               
-              <h1 className="heading animate-on-load opacity-0 translate-y-10 transition-all duration-700 delay-100">
+              <h1 className="heading text-wz-blue animate-on-load opacity-0 translate-y-10 transition-all duration-700 delay-100">
                 <span className="animated-gradient-text">Transformamos</span> sua presença digital com tecnologia de ponta!
               </h1>
               
-              <p className="paragraph text-gray-400 max-w-lg mx-auto lg:mx-0 animate-on-load opacity-0 translate-y-10 transition-all duration-700 delay-200">
+              <p className="paragraph text-wz-dark max-w-lg mx-auto lg:mx-0 animate-on-load opacity-0 translate-y-10 transition-all duration-700 delay-200">
                 Soluções completas para seu negócio: sites institucionais, lojas virtuais, hospedagem, servidores VPS e estratégias de marketing digital que impulsionam seus resultados.
               </p>
               
@@ -87,7 +87,7 @@ const Hero = () => {
                 
                 <a 
                   href="#services" 
-                  className="border border-white/20 hover:border-wz-blue/50 transition-all text-white font-medium py-3 px-8 rounded-full flex-center gap-2 hover:bg-white/5"
+                  className="border border-wz-blue/30 hover:border-wz-blue transition-all text-wz-blue font-medium py-3 px-8 rounded-full flex-center gap-2 hover:bg-wz-blue/5"
                 >
                   Nossos Serviços
                 </a>
@@ -98,15 +98,15 @@ const Hero = () => {
                   {[1, 2, 3, 4].map((i) => (
                     <div 
                       key={i} 
-                      className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-700 to-gray-800 border-2 border-gray-900 flex-center"
+                      className="w-10 h-10 rounded-full bg-gradient-to-r from-wz-blue-light to-wz-blue border-2 border-white flex-center"
                     >
-                      <span className="text-xs">★</span>
+                      <span className="text-xs text-white">★</span>
                     </div>
                   ))}
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">
-                    <span className="text-white font-semibold">+1000</span> clientes satisfeitos
+                  <p className="text-sm text-wz-dark">
+                    <span className="text-wz-blue font-semibold">+1000</span> clientes satisfeitos
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const Hero = () => {
             <div className="relative w-full aspect-square max-w-[550px] mx-auto">
               <div className="absolute inset-0 bg-gradient-radial from-wz-blue/20 to-transparent rounded-full animate-pulse-slow"></div>
               
-              <div className="card-3d w-full h-full bg-gradient-to-br from-wz-dark to-wz-black rounded-2xl border border-white/10 overflow-hidden shadow-xl">
+              <div className="card-3d w-full h-full bg-gradient-to-br from-white to-wz-gray-light rounded-2xl border border-wz-blue/10 overflow-hidden shadow-xl">
                 <div className="relative w-full h-full flex-center">
                   <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <div className="parallax" data-speed="20">
@@ -136,33 +136,33 @@ const Hero = () => {
                       <div className="text-6xl font-bold mb-4 animate-float">
                         <span className="text-gradient">Wz</span>
                       </div>
-                      <div className="text-2xl font-light text-gray-300 tracking-wider animate-float animation-delay-500">
+                      <div className="text-2xl font-light text-wz-blue tracking-wider animate-float animation-delay-500">
                         WebDezign
                       </div>
-                      <div className="mt-6 w-16 h-1 bg-gradient-to-r from-wz-blue to-white mx-auto rounded-full animate-pulse-slow"></div>
+                      <div className="mt-6 w-16 h-1 bg-gradient-to-r from-wz-blue to-wz-blue-light mx-auto rounded-full animate-pulse-slow"></div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="parallax absolute -bottom-6 -right-6 w-32 h-32 bg-wz-blue/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg" data-speed="5">
+              <div className="parallax absolute -bottom-6 -right-6 w-32 h-32 bg-white backdrop-blur-md rounded-2xl border border-wz-blue/20 flex-center shadow-lg" data-speed="5">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-wz-blue-light">+5</div>
-                  <div className="text-xs text-gray-400">Anos de experiência</div>
+                  <div className="text-xs text-wz-dark">Anos de experiência</div>
                 </div>
               </div>
               
-              <div className="parallax absolute -top-4 -left-4 w-28 h-28 bg-wz-blue/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg" data-speed="8">
+              <div className="parallax absolute -top-4 -left-4 w-28 h-28 bg-white backdrop-blur-md rounded-2xl border border-wz-blue/20 flex-center shadow-lg" data-speed="8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-wz-blue">100%</div>
-                  <div className="text-xs text-gray-400">Responsivo</div>
+                  <div className="text-xs text-wz-dark">Responsivo</div>
                 </div>
               </div>
               
-              <div className="parallax absolute top-[40%] -right-10 w-24 h-24 bg-gradient-to-br from-wz-blue/10 to-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg animation-delay-1000" data-speed="12">
+              <div className="parallax absolute top-[40%] -right-10 w-24 h-24 bg-gradient-to-br from-wz-blue/10 to-white backdrop-blur-md rounded-2xl border border-wz-blue/20 flex-center shadow-lg animation-delay-1000" data-speed="12">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white">SEO</div>
-                  <div className="text-xs text-gray-400">Otimizado</div>
+                  <div className="text-2xl font-bold text-wz-blue">SEO</div>
+                  <div className="text-xs text-wz-dark">Otimizado</div>
                 </div>
               </div>
             </div>
@@ -171,14 +171,14 @@ const Hero = () => {
       </div>
       
       <div className="absolute bottom-10 left-0 right-0 flex-center animate-bounce-subtle">
-        <a href="#services" className="text-gray-400 hover:text-white transition-colors">
+        <a href="#services" className="text-wz-blue hover:text-wz-blue-dark transition-colors">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </a>
       </div>
       
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-wz-black to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 };
