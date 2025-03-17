@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, Bot } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -66,6 +66,18 @@ const Contact = () => {
       title: "Endereço",
       value: "São Paulo, SP - Brasil",
       link: "https://maps.google.com"
+    },
+    {
+      icon: <MessageSquare className="w-5 h-5 text-wz-blue" />,
+      title: "WhatsApp",
+      value: "+55 (11) 99999-9999",
+      link: "https://wa.me/5511999999999"
+    },
+    {
+      icon: <Bot className="w-5 h-5 text-wz-blue" />,
+      title: "Chatbot IA",
+      value: "Atendimento 24/7",
+      link: "#"
     }
   ];
   
@@ -93,12 +105,14 @@ const Contact = () => {
                 Estamos disponíveis para atender suas necessidades e oferecer soluções personalizadas para o seu negócio.
               </p>
               
-              <div className="space-y-6 mb-10">
+              <div className="space-y-4 mb-10">
                 {contactInfo.map((info, index) => (
                   <a 
                     key={index} 
                     href={info.link}
                     className="flex items-start gap-4 hover:bg-white/5 p-3 rounded-lg transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <div className="mt-1 w-10 h-10 rounded-full bg-wz-blue/10 flex-center flex-shrink-0">
                       {info.icon}
@@ -192,10 +206,13 @@ const Contact = () => {
                       <option value="" disabled>Selecione um serviço</option>
                       <option value="site-institucional">Site Institucional</option>
                       <option value="loja-virtual">Loja Virtual</option>
+                      <option value="website-personalizado">Website Personalizado</option>
                       <option value="hospedagem">Hospedagem</option>
+                      <option value="revenda">Revenda de Hospedagem</option>
+                      <option value="vps">Servidor VPS</option>
                       <option value="marketing-digital">Marketing Digital</option>
                       <option value="seo">SEO</option>
-                      <option value="sistema-delivery">Sistema de Delivery</option>
+                      <option value="anuncios">Anúncios Pagos</option>
                       <option value="outro">Outro</option>
                     </select>
                   </div>

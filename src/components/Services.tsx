@@ -1,34 +1,10 @@
 
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Laptop, ShoppingBag, Code, ArrowRight } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Services = () => {
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1,
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, observerOptions);
-    
-    const elements = document.querySelectorAll('.reveal-animation');
-    elements.forEach((element) => {
-      observer.observe(element);
-    });
-    
-    return () => {
-      elements.forEach((element) => {
-        observer.unobserve(element);
-      });
-    };
-  }, []);
+  const [activeTab, setActiveTab] = useState("institutional");
   
   const siteCategories = [
     {
@@ -68,27 +44,6 @@ const Services = () => {
     },
   ];
   
-  const serviceTypes = [
-    {
-      title: "Sites Institucionais",
-      description: "Desenvolvimento de sites profissionais, responsivos e otimizados para diferentes segmentos de mercado.",
-      icon: <Laptop className="w-8 h-8 text-wz-blue" />,
-      categories: [...siteCategories],
-    },
-    {
-      title: "Lojas Virtuais",
-      description: "E-commerce completo com pagamentos online e integração com marketplaces.",
-      icon: <ShoppingBag className="w-8 h-8 text-wz-blue" />,
-      categories: [],
-    },
-    {
-      title: "Web Sites Personalizados",
-      description: "Desenvolvimento de sites exclusivos sob demanda, com design único e funcionalidades personalizadas.",
-      icon: <Code className="w-8 h-8 text-wz-blue" />,
-      categories: [],
-    },
-  ];
-  
   return (
     <section id="services" className="py-20 relative">
       <div className="wrapper">
@@ -102,53 +57,137 @@ const Services = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {serviceTypes.map((service, index) => (
-            <div 
-              key={index} 
-              className="reveal-animation glassmorphism rounded-2xl p-6 hover-lift card-shadow"
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
+        <Tabs defaultValue="institutional" className="w-full mb-16">
+          <TabsList className="w-full max-w-2xl mx-auto grid grid-cols-3 mb-10">
+            <TabsTrigger value="institutional" className="data-[state=active]:bg-wz-blue data-[state=active]:text-white">
+              <Laptop className="w-4 h-4 mr-2" />
+              Sites Institucionais
+            </TabsTrigger>
+            <TabsTrigger value="ecommerce" className="data-[state=active]:bg-wz-blue data-[state=active]:text-white">
+              <ShoppingBag className="w-4 h-4 mr-2" />
+              Lojas Virtuais
+            </TabsTrigger>
+            <TabsTrigger value="custom" className="data-[state=active]:bg-wz-blue data-[state=active]:text-white">
+              <Code className="w-4 h-4 mr-2" />
+              Websites Personalizados
+            </TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="institutional" className="space-y-8">
+            <div className="glassmorphism rounded-2xl p-6 hover-lift card-shadow">
               <div className="flex-center h-16 w-16 rounded-full bg-gradient-to-br from-wz-blue/20 to-wz-purple/20 mb-6">
-                {service.icon}
+                <Laptop className="w-8 h-8 text-wz-blue" />
               </div>
               
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-400 mb-4">{service.description}</p>
+              <h3 className="text-xl font-bold mb-3">Sites Institucionais</h3>
+              <p className="text-gray-400 mb-4">Desenvolvimento de sites profissionais, responsivos e otimizados para diferentes segmentos de mercado.</p>
               
-              {service.categories.length > 0 && (
-                <div className="mt-4">
-                  <p className="text-sm font-semibold text-white mb-3">Segmentos atendidos:</p>
-                  <div className="grid grid-cols-2 gap-2 mt-2">
-                    {service.categories.map((category, idx) => (
-                      <div 
-                        key={idx} 
-                        className="flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors"
-                      >
-                        <span className="text-lg">{category.icon}</span>
-                        <div>
-                          <h4 className="text-sm font-medium">{category.title}</h4>
-                        </div>
+              <div className="mt-4">
+                <p className="text-sm font-semibold text-white mb-3">Segmentos atendidos:</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2">
+                  {siteCategories.map((category, idx) => (
+                    <div 
+                      key={idx} 
+                      className="flex items-start gap-2 p-3 rounded-lg hover:bg-white/5 transition-colors"
+                    >
+                      <span className="text-lg">{category.icon}</span>
+                      <div>
+                        <h4 className="text-sm font-medium">{category.title}</h4>
+                        <p className="text-xs text-gray-400">{category.description}</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-              )}
+              </div>
               
               <a 
                 href="#contact" 
-                className="mt-4 flex items-center gap-1 text-wz-blue hover:underline text-sm font-medium transition-all"
+                className="mt-6 flex items-center gap-1 text-wz-blue hover:underline text-sm font-medium transition-all"
               >
-                Saiba mais <ArrowRight className="w-4 h-4" />
+                Solicitar orçamento <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-          ))}
-        </div>
+          </TabsContent>
+          
+          <TabsContent value="ecommerce" className="space-y-8">
+            <div className="glassmorphism rounded-2xl p-6 hover-lift card-shadow">
+              <div className="flex-center h-16 w-16 rounded-full bg-gradient-to-br from-wz-blue/20 to-wz-purple/20 mb-6">
+                <ShoppingBag className="w-8 h-8 text-wz-blue" />
+              </div>
+              
+              <h3 className="text-xl font-bold mb-3">Lojas Virtuais</h3>
+              <p className="text-gray-400 mb-4">E-commerce completo com pagamentos online e integração com marketplaces.</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Catálogo Digital</h4>
+                  <p className="text-sm text-gray-400">Exibição profissional e interativa de produtos, com fotos e descrições detalhadas.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Pagamentos Online</h4>
+                  <p className="text-sm text-gray-400">Integração com principais gateways de pagamento, oferecendo máxima segurança nas transações.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Marketplaces</h4>
+                  <p className="text-sm text-gray-400">Integração com Mercado Livre, Amazon, Magalu e outras plataformas populares.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Gestão de Estoque</h4>
+                  <p className="text-sm text-gray-400">Controle automático de estoque, com alertas de produtos com estoque baixo.</p>
+                </div>
+              </div>
+              
+              <a 
+                href="#contact" 
+                className="mt-6 flex items-center gap-1 text-wz-blue hover:underline text-sm font-medium transition-all"
+              >
+                Solicitar orçamento <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="custom" className="space-y-8">
+            <div className="glassmorphism rounded-2xl p-6 hover-lift card-shadow">
+              <div className="flex-center h-16 w-16 rounded-full bg-gradient-to-br from-wz-blue/20 to-wz-purple/20 mb-6">
+                <Code className="w-8 h-8 text-wz-blue" />
+              </div>
+              
+              <h3 className="text-xl font-bold mb-3">Web Sites Personalizados</h3>
+              <p className="text-gray-400 mb-4">Desenvolvimento de sites exclusivos sob demanda, com design único e funcionalidades personalizadas.</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Design Exclusivo</h4>
+                  <p className="text-sm text-gray-400">Layouts únicos desenvolvidos especificamente para sua marca e identidade visual.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Funcionalidades Específicas</h4>
+                  <p className="text-sm text-gray-400">Desenvolvimento de features personalizadas para atender necessidades específicas do seu negócio.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Integrações Avançadas</h4>
+                  <p className="text-sm text-gray-400">Conexão com ERPs, CRMs e outras plataformas essenciais para seu negócio.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                  <h4 className="text-lg font-semibold mb-2">Suporte Personalizado</h4>
+                  <p className="text-sm text-gray-400">Atendimento dedicado e manutenção contínua para garantir a evolução da plataforma.</p>
+                </div>
+              </div>
+              
+              <a 
+                href="#contact" 
+                className="mt-6 flex items-center gap-1 text-wz-blue hover:underline text-sm font-medium transition-all"
+              >
+                Solicitar orçamento <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </TabsContent>
+        </Tabs>
         
         <div className="mt-16 reveal-animation">
           <div className="glassmorphism rounded-2xl p-8 overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-wz-blue/20 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-wz-purple/20 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-wz-blue/10 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-wz-purple/10 rounded-full blur-3xl -z-10"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <div>

@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -81,7 +82,7 @@ const Hero = () => {
                   href="#contact" 
                   className="btn-glow bg-wz-blue hover:bg-wz-blue/90 transition-all text-white font-medium py-3 px-8 rounded-full flex-center gap-2"
                 >
-                  Orçamento Imediato
+                  Orçamento Imediato <ArrowRight className="w-4 h-4" />
                 </a>
                 
                 <a 
@@ -155,6 +156,13 @@ const Hero = () => {
                 <div className="text-center">
                   <div className="text-3xl font-bold text-wz-blue">100%</div>
                   <div className="text-xs text-gray-400">Responsivo</div>
+                </div>
+              </div>
+              
+              <div className="parallax absolute top-[40%] -right-10 w-24 h-24 bg-gradient-to-br from-wz-blue/10 to-wz-purple/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg animation-delay-1000" data-speed="12">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">SEO</div>
+                  <div className="text-xs text-gray-400">Otimizado</div>
                 </div>
               </div>
             </div>
