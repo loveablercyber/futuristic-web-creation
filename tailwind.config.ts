@@ -207,6 +207,7 @@ export default {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 				"blue-gradient": "linear-gradient(90deg, #1EAEDB, #0FA0CE)",
+				"blue-purple-gradient": "linear-gradient(90deg, #1EAEDB, #6E59A5)",
 				"blue-white-gradient": "linear-gradient(90deg, #1EAEDB, #F5F5F5)",
 				"dark-gradient": "linear-gradient(to bottom, #121212, #1A1F2C)",
 			},

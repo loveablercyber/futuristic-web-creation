@@ -63,8 +63,8 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="flex-1 text-center lg:text-left z-10">
             <div className="space-y-6">
-              <div className="inline-block px-4 py-1 rounded-full bg-wz-purple/10 border border-wz-purple/20 animate-on-load opacity-0 translate-y-10 transition-all duration-700">
-                <p className="text-sm text-wz-purple-light font-medium">
+              <div className="inline-block px-4 py-1 rounded-full bg-wz-blue/10 border border-wz-blue/20 animate-on-load opacity-0 translate-y-10 transition-all duration-700">
+                <p className="text-sm text-wz-blue-light font-medium">
                   Criação de Sites • Hospedagem • Marketing Digital
                 </p>
               </div>
@@ -124,7 +124,7 @@ const Hero = () => {
                       <div className="absolute top-[10%] left-[15%] w-20 h-20 bg-wz-blue/20 rounded-full blur-xl animate-float"></div>
                     </div>
                     <div className="parallax" data-speed="10">
-                      <div className="absolute bottom-[20%] right-[10%] w-32 h-32 bg-wz-purple/20 rounded-full blur-xl animate-float animation-delay-1000"></div>
+                      <div className="absolute bottom-[20%] right-[10%] w-32 h-32 bg-wz-blue/20 rounded-full blur-xl animate-float animation-delay-1000"></div>
                     </div>
                     <div className="parallax" data-speed="15">
                       <div className="absolute top-[40%] right-[20%] w-16 h-16 bg-wz-blue/30 rounded-full blur-lg animate-float animation-delay-500"></div>
@@ -139,15 +139,15 @@ const Hero = () => {
                       <div className="text-2xl font-light text-gray-300 tracking-wider animate-float animation-delay-500">
                         WebDezign
                       </div>
-                      <div className="mt-6 w-16 h-1 bg-gradient-to-r from-wz-blue to-wz-purple mx-auto rounded-full animate-pulse-slow"></div>
+                      <div className="mt-6 w-16 h-1 bg-gradient-to-r from-wz-blue to-white mx-auto rounded-full animate-pulse-slow"></div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="parallax absolute -bottom-6 -right-6 w-32 h-32 bg-wz-purple/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg" data-speed="5">
+              <div className="parallax absolute -bottom-6 -right-6 w-32 h-32 bg-wz-blue/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg" data-speed="5">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-wz-purple-light">+5</div>
+                  <div className="text-3xl font-bold text-wz-blue-light">+5</div>
                   <div className="text-xs text-gray-400">Anos de experiência</div>
                 </div>
               </div>
@@ -159,7 +159,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="parallax absolute top-[40%] -right-10 w-24 h-24 bg-gradient-to-br from-wz-blue/10 to-wz-purple/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg animation-delay-1000" data-speed="12">
+              <div className="parallax absolute top-[40%] -right-10 w-24 h-24 bg-gradient-to-br from-wz-blue/10 to-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex-center shadow-lg animation-delay-1000" data-speed="12">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">SEO</div>
                   <div className="text-xs text-gray-400">Otimizado</div>

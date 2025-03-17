@@ -102,7 +102,7 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-blue-purple-gradient;
+    @apply bg-clip-text text-transparent bg-blue-gradient;
   }
   
   .animate-delay-100 {
