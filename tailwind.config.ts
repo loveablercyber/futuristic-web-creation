@@ -63,10 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Wz WebDezign
-				"wz-blue": "#0EA5E9",
-				"wz-purple": "#6E59A5",
-				"wz-purple-light": "#9b87f5",
+				// Updated colors for Wz WebDezign with blue and white theme
+				"wz-blue": "#1EAEDB",
+				"wz-blue-light": "#33C3F0",
+				"wz-blue-dark": "#0FA0CE",
+				"wz-white": "#FFFFFF",
+				"wz-gray-light": "#F5F5F5",
 				"wz-black": "#121212",
 				"wz-dark": "#1A1F2C",
 			},
@@ -204,12 +206,13 @@ export default {
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-				"blue-purple-gradient": "linear-gradient(90deg, #0EA5E9, #6E59A5)",
+				"blue-gradient": "linear-gradient(90deg, #1EAEDB, #0FA0CE)",
+				"blue-white-gradient": "linear-gradient(90deg, #1EAEDB, #F5F5F5)",
 				"dark-gradient": "linear-gradient(to bottom, #121212, #1A1F2C)",
 			},
 			boxShadow: {
-				"neon-blue": "0 0 5px rgba(14, 165, 233, 0.5), 0 0 20px rgba(14, 165, 233, 0.3)",
-				"neon-purple": "0 0 5px rgba(110, 89, 165, 0.5), 0 0 20px rgba(110, 89, 165, 0.3)",
+				"neon-blue": "0 0 5px rgba(30, 174, 219, 0.5), 0 0 20px rgba(30, 174, 219, 0.3)",
+				"neon-white": "0 0 5px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3)",
 			},
 			transitionDuration: {
 				'2000': '2000ms',

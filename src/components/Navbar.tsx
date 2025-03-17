@@ -24,7 +24,6 @@ const Navbar = () => {
     { title: "Serviços", href: "#services" },
     { title: "Hospedagem", href: "#hosting" },
     { title: "Marketing", href: "#marketing" },
-    { title: "Delivery", href: "#delivery" },
     { title: "Contato", href: "#contact" },
   ];
   
@@ -43,7 +42,7 @@ const Navbar = () => {
             <a
               key={index}
               href={link.href}
-              className="text-gray-300 hover:text-wz-blue transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wz-blue after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              className="text-wz-white hover:text-wz-blue-light transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wz-blue-light after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               {link.title}
             </a>
@@ -51,7 +50,7 @@ const Navbar = () => {
           
           <a
             href="#contact"
-            className="ml-4 btn-glow bg-wz-blue text-white py-2 px-5 rounded-full font-medium hover:brightness-110 transition-all duration-300"
+            className="ml-4 btn-glow bg-wz-blue text-wz-white py-2 px-5 rounded-full font-medium hover:brightness-110 transition-all duration-300"
           >
             Orçamento
           </a>
@@ -59,7 +58,7 @@ const Navbar = () => {
         
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white z-20"
+          className="md:hidden text-wz-white z-20"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -76,7 +75,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-gray-300 text-lg hover:text-wz-blue transition-colors"
+                className="text-wz-white text-lg hover:text-wz-blue-light transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
@@ -85,7 +84,7 @@ const Navbar = () => {
             
             <a
               href="#contact"
-              className="mt-4 btn-glow bg-wz-blue text-white py-2 px-8 rounded-full font-medium hover:brightness-110 transition-all duration-300"
+              className="mt-4 btn-glow bg-wz-blue text-wz-white py-2 px-8 rounded-full font-medium hover:brightness-110 transition-all duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Orçamento
