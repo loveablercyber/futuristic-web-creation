@@ -28,10 +28,10 @@ const Navbar = () => {
   ];
   
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-md' : 'bg-transparent py-6'}`}>
       <div className="wrapper flex-between">
         <a href="#home" className="relative z-10">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-2xl font-bold text-wz-dark">
             Wz <span className="text-wz-blue">WebDezign</span>
           </h1>
         </a>
@@ -42,7 +42,7 @@ const Navbar = () => {
             <a
               key={index}
               href={link.href}
-              className="text-wz-blue hover:text-wz-blue-light transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wz-blue-light after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+              className="text-wz-blue-dark font-medium hover:text-wz-blue transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-wz-blue after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
             >
               {link.title}
             </a>
@@ -58,7 +58,7 @@ const Navbar = () => {
         
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-wz-blue z-20"
+          className="md:hidden text-wz-blue-dark z-20"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,7 +75,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-wz-blue text-lg hover:text-wz-blue-light transition-colors"
+                className="text-wz-blue-dark text-lg font-medium hover:text-wz-blue transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}

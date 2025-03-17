@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,10 +66,10 @@ export default {
 				// Updated colors for Wz WebDezign with blue and white theme
 				"wz-blue": "#1EAEDB",
 				"wz-blue-light": "#33C3F0",
-				"wz-blue-dark": "#0FA0CE",
+				"wz-blue-dark": "#0A6F8D", // Darker blue for better contrast
 				"wz-white": "#FFFFFF",
 				"wz-gray-light": "#F5F5F5",
-				"wz-dark": "#333333",
+				"wz-dark": "#333333", // Darker text color for better contrast
 				"wz-black": "#121212",
 			},
 			borderRadius: {
@@ -205,9 +206,9 @@ export default {
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-				"blue-gradient": "linear-gradient(90deg, #1EAEDB, #0FA0CE)",
-				"blue-purple-gradient": "linear-gradient(90deg, #1EAEDB, #6E59A5)",
-				"blue-white-gradient": "linear-gradient(90deg, #1EAEDB, #F5F5F5)",
+				"blue-gradient": "linear-gradient(90deg, #0A6F8D, #1EAEDB)", // Darker to lighter blue for better contrast
+				"blue-purple-gradient": "linear-gradient(90deg, #0A6F8D, #6E59A5)",
+				"blue-white-gradient": "linear-gradient(90deg, #0A6F8D, #1EAEDB)", // Changed to blue gradient for better visibility
 				"dark-gradient": "linear-gradient(to bottom, #121212, #1A1F2C)",
 			},
 			boxShadow: {

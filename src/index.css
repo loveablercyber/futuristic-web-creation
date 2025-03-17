@@ -80,15 +80,15 @@
   }
   
   .heading {
-    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-wz-blue-dark;
   }
   
   .subheading {
-    @apply text-xl sm:text-2xl md:text-3xl font-semibold;
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold text-wz-blue;
   }
   
   .paragraph {
-    @apply text-sm sm:text-base md:text-lg;
+    @apply text-sm sm:text-base md:text-lg text-wz-dark;
   }
 }
 
@@ -102,7 +102,7 @@
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-blue-white-gradient;
+    @apply bg-clip-text text-transparent bg-blue-gradient;
   }
   
   .animate-delay-100 {
@@ -189,12 +189,11 @@
   background: rgba(30, 174, 219, 0.8);
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar classes */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -202,7 +201,7 @@
 
 /* Animated gradient text */
 .animated-gradient-text {
-  background: linear-gradient(90deg, #1EAEDB, #FFFFFF, #1EAEDB);
+  background: linear-gradient(90deg, #1EAEDB, #0FA0CE, #1EAEDB);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
@@ -237,7 +236,19 @@
   animation: glowing 10s linear infinite;
 }
 
-/* 3D card effect */
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* 3D card and animation effects */
 .card-3d {
   transition: all 0.2s ease;
   transform-style: preserve-3d;
@@ -248,7 +259,6 @@
   transform: rotateY(5deg) rotateX(5deg);
 }
 
-/* Custom animations for section transitions */
 .reveal-animation {
   opacity: 0;
   transform: translateY(50px);
@@ -260,7 +270,6 @@
   transition: all 1s ease;
 }
 
-/* Custom transitions */
 .page-transitions {
   opacity: 0;
   animation: fade-in 1s forwards;
