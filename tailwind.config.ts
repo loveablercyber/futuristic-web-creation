@@ -70,6 +70,7 @@ export default {
 				"wz-white": "#FFFFFF",
 				"wz-gray-light": "#F5F5F5",
 				"wz-dark": "#333333", // Darker text color for better contrast
+				"wz-text": "#444444", // New darker text color for plan descriptions
 				"wz-black": "#121212",
 			},
 			borderRadius: {

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,7 +23,7 @@
     --secondary-foreground: 196 83% 47%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 215 20% 45%; /* Darkened from 65% to 45% */
 
     --accent: 196 85% 45%; 
     --accent-foreground: 0 0% 100%;
@@ -282,4 +283,33 @@
   to {
     opacity: 1;
   }
+}
+
+/* Mouse follow effect */
+.mouse-follow-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.mouse-follow-title span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.mouse-follow-title::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(30, 174, 219, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mouse-follow-title:hover::before {
+  opacity: 1;
 }

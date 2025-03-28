@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -34,6 +35,23 @@ const Hero = () => {
       setTimeout(() => {
         particle.remove();
       }, 2000);
+      
+      // Handle mouse-follow effect for title
+      if (titleRef.current) {
+        const rect = titleRef.current.getBoundingClientRect();
+        const mouseXRelative = e.clientX - rect.left;
+        const mouseYRelative = e.clientY - rect.top;
+        
+        if (
+          mouseXRelative >= 0 && 
+          mouseXRelative <= rect.width && 
+          mouseYRelative >= 0 && 
+          mouseYRelative <= rect.height
+        ) {
+          titleRef.current.style.setProperty('--mouse-x', `${mouseXRelative}px`);
+          titleRef.current.style.setProperty('--mouse-y', `${mouseYRelative}px`);
+        }
+      }
     };
     
     window.addEventListener('mousemove', handleMouseMove);
@@ -69,7 +87,15 @@ const Hero = () => {
                 </p>
               </div>
               
-              <h1 className="heading text-wz-blue animate-on-load opacity-0 translate-y-10 transition-all duration-700 delay-100">
+              <h1 
+                ref={titleRef} 
+                className="heading text-wz-blue mouse-follow-title animate-on-load opacity-0 translate-y-10 transition-all duration-700 delay-100"
+                style={{
+                  '--mouse-x': '0px',
+                  '--mouse-y': '0px',
+                  background: `radial-gradient(circle 80px at var(--mouse-x) var(--mouse-y), rgba(30, 174, 219, 0.8), rgba(30, 174, 219, 0.3) 40%, transparent 60%)`
+                } as React.CSSProperties}
+              >
                 <span className="animated-gradient-text">Transformamos</span> sua presença digital com tecnologia de ponta!
               </h1>
               
